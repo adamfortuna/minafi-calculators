@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>FIO Number Calculator</title>
+
+  <link rel="stylesheet" href="Tangle/TangleKit.css" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="demo.css" type="text/css">
+  <script type="text/javascript" src="Tangle/Tangle.js"></script>
+  <script type="text/javascript" src="Tangle/mootools.js"></script>
+  <script type="text/javascript" src="Tangle/sprintf.js"></script>
+  <script type="text/javascript" src="Tangle/BVTouchable.js"></script>
+  <script type="text/javascript" src="Tangle/TangleKit.js"></script>
+</head>
+
+<body>
+
+<div class="wrapper container card">
+  <h3>FIO Number Calculator</h3>
+	<p class="lead">Try changing the underlined values to calculator your FIO number.</p>
+	<p>
+		The minimum I could happily spend in retirement is
+    $<span data-var="minSpending" data-format="currency" class="TKNumberField" data-size="7"></span>. The maximum I'd likely spend is 
+	  $<span data-var="maxSpending" data-format="currency" class="TKNumberField" data-size="7"></span>.
+    My expected yearly spending is
+    $<span data-var="spending" data-format="currency" class="TKNumberField" data-size="7"></span>.
+	</p>
+
+  <p>
+    Given these numbers, your FIO number would be
+    <span class="tangle--dynamic" data-var="fioreNumber" data-format="currency"></span>. This is calculated using the following numbers:
+  </p>
+  
+  <p class="text-center h5">
+	  (<span class="tangle--dynamic" data-var="minSpending" data-format="currency"></span> + <span class="tangle--dynamic" data-var="maxSpending" data-format="currency"></span> + (<span class="tangle--dynamic" data-var="spending" data-format="currency"></span>*4))/6 = <span class="tangle--dynamic" data-var="fioreNumber" data-format="currency"></span> FIO Number
+	</p>
+  
+  
+	<p class="lead fi--info">
+		<i>
+      Adam Says: This assumes a formula of: ((Maximum+Minimum+(Expected*4))/6) to calulcate our your FIO number.
+    </i>
+	</p>
+</div>
+
+<script type="text/javascript" src="demo.js"></script>
+</body>
+</html>

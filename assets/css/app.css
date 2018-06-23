@@ -1,10 +1,10 @@
+body {
+  margin: 1rem;
+  padding: 1rem;
+}
 .wrapper {
-  width: 650px;
-  border: 1px solid rgba(0,0,0,.125);
-  border-radius: .25rem;
-  padding-top: 1rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  max-width: 700px !important;
+  padding: 0.8rem 1.4rem;
 }
 
 .fi--info.lead {
@@ -19,7 +19,7 @@
 
 .fi--info:before {
   content:'';        /* instead of content you could use a bgimage here */
-  background: url('face.png') no-repeat left;
+  background: url('../images/face.png') no-repeat left;
   background-size: 64px;
   float:left;
   -moz-transition:0.5s all;
@@ -89,8 +89,8 @@
   width: 134px;
   height: 8px;
   margin-top: -26px;
-  background-image: url("SliderBackground.png");
-  top: 17px;
+  background-image: url("../images/SliderBackground.png");
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -99,5 +99,5 @@
 	position: absolute;
 	width: 134px;
 	height: 8px;
-	background-image: url('SliderFill.png');
+	background-image: url('../images/SliderFill.png');
 }

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Employee Stock Purchase Plan Calculator</title>
+
+  <link rel="stylesheet" href="../assets/css/Tangle/TangleKit.css" type="text/css">
+  <link rel="stylesheet" href="../assets/css/app.css" type="text/css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <script type="text/javascript" src="../assets/js/Tangle/Tangle.js"></script>
+  <script type="text/javascript" src="../assets/js/Tangle/mootools.js"></script>
+  <script type="text/javascript" src="../assets/js/Tangle/sprintf.js"></script>
+  <script type="text/javascript" src="../assets/js/Tangle/BVTouchable.js"></script>
+  <script type="text/javascript" src="../assets/js/Tangle/TangleKit.js"></script>
+  <script type="text/javascript" src="../assets/js/index.js"></script>
+</head>
+
+<body>
+
+<div class="wrapper container card">
+  <h3>Employee Stock Purchase Plan Calculator</h3>
+	<p class="lead">Try changing the numbers to understand your ESPP Returns.</p>
+
+  <div id="inputs">
+    <div class="row">
+      <p class="col-12">
+        Let's assume your <b>discount rate</b> is
+        <span class="FIAdjustableNumber tangle--dynamic" data-format="percentInteger" data-var="discountRate" data-min="0" data-max="0.15" data-step="0.01"></span>
+        and that your <b>tax bracket</b> is
+        <span class="FIAdjustableNumber tangle--dynamic" data-format="percentInteger" data-var="taxRate" data-min="0" data-max="0.50" data-step="0.01"></span>.
+      </p>
+
+      <p class="col-12">
+        The <b>lowest price of the stock</b> at an offer or purchase date during your look-back window is
+        $<span class="TKNumberField tangle--dynamic" data-format="currency" data-var="lowStockPrice"></span> and the  price at the purchase date was
+        $<span class="TKNumberField tangle--dynamic" data-format="currency" data-var="endStockPrice">.
+      </p>
+
+      <p class="col-12">
+        And lastly, let's assume the <b>amount you want to invest</b> in the ESPP is
+        $<span class="TKNumberField tangle--dynamic" data-format="currency" data-var="investment"></span>.
+      </p>
+    </div>
+
+    <hr />
+
+
+    <div class="row">
+      <dl class="col-5">
+        <h2>Details...</h2>
+        <dt>Lowest Price</dt>
+        <dd>$<span class="TKNumberField tangle--dynamic" data-format="currency" data-var="lowestStockPrice"></span></dd>
+
+        <dt>Discount Rate</dt>
+        <dd><span class="FIAdjustableNumber tangle--dynamic" data-format="percentInteger" data-var="discountRate" data-min="0" data-max="0.15" data-step="0.01"></span></dd>
+
+        <dt>Amount Invested</dt>
+        <dd>$<span class="TKNumberField tangle--dynamic" data-format="currency" data-var="investment"></span></dd>
+
+        <dt>Your Discount Price per share</dt>
+        <dd><span class="tangle--dynamic" data-format="currency" data-var="discountPrice"></span></dd>
+
+        <dt>Number of Shares Purchased</dt>
+        <dd><span class="tangle--dynamic" data-format="integerWithSeparator" data-var="shares"></span></dd>
+
+        <dt>Actual Amount Invested</dt>
+        <dd><span class="tangle--dynamic" data-format="currency" data-var="investmentTotal"></span></dd>
+
+        <dt>Value at time of Purchase</dt>
+        <dd><span class="tangle--dynamic" data-format="currency" data-var="valueInitial"></span></dd>
+      </dl>
+
+      <div class="col-7">
+        <h2>If you sell immediately...</h2>
+        <dl>
+          <dt>Before-tax Profit at time of purchase</dt>
+          <dd><span class="tangle--dynamic" data-format="currency" data-var="beforeTaxProfit"></span></dd>
+
+          <dt>Of that amount, you'll need to pay taxes:</dt>
+          <dd><span class="tangle--dynamic" data-format="currency" data-var="initialTaxes"></span></dd>
+
+          <dt>Resulting in a total profit of</dt>
+          <dd><span class="tangle--dynamic" data-format="currency" data-var="initialProfit"></span></dd>
+
+          <dt>Return on investment</dt>
+          <dd><span class="tangle--dynamic" data-format="percent" data-var="initialReturn"></span></dd>
+
+          <dd><b class="tangle--dynamic" data-format="integer" data-var="returnDegree"></b></dd>
+        </dl>
+      </div>
+    </div>
+    <div class="BlockSwitch" data-var="returnDegree">
+  		<div class="alert alert-success lead fi--info" role="alert">
+  			<h3>Great Return! :)</h3>
+        <p><i>Adam Says:</i> The yearly return on your investment in this scenario is <b class="tangle--dynamic" data-format="percent" data-var="initialReturn"></b>, which is quite a bit higher than 7% - the baseline for investing.</p>
+  		</div>
+  		<div class="alert alert-warning lead fi--info" role="alert">
+  		  <h3>OK Returns :|</h3>
+        <p><i>Adam Says:</i> Your investment returns of <b class="tangle--dynamic" data-format="percent" data-var="initialReturn"></b> are in line with investing them in the stock market. You may consider investing in your ESPP to diversify your portfolio if you believe your ESPP is more likely to perform than the stock market.</p>
+  		</div>
+  		<div class="alert alert-danger lead fi--info" role="alert">
+  		  <h3>Maybe Not Worth It :(</h3>
+        <p><i>Adam Says:</i> Your ESPP is set to return <b class="tangle--dynamic" data-format="percent" data-var="initialReturn"></b> per year, which is significantly less than the average market return of 7%. Historically speaking, you'd be better off investing in the stock market.</p>
+  		</div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
